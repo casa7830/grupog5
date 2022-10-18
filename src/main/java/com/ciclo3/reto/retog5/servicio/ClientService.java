@@ -28,7 +28,7 @@ public class ClientService {
     return repository.save(client);
   }
 
-  /*
+
   public Client getClient(long id) {
     return repository.findById(id).orElse(null);
   }
@@ -45,6 +45,6 @@ public class ClientService {
     clientOld.setAge(clientUpd.getAge());
     return repository.save(clientOld);
   }
-*/
+
   }
 

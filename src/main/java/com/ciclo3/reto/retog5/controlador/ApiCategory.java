@@ -32,4 +32,18 @@ public class ApiCategory {
       return ResponseEntity.status(201).build();
    }
 
+   @PutMapping("/update")
+   public ResponseEntity updateCategory(@RequestBody Category category){
+      service.updateCategory(category);
+      return ResponseEntity.status(201).build();
+   }
+
+   @DeleteMapping( "/{id}")
+   public ResponseEntity deleteClient(@PathVariable long id) {
+      service.deleteCategory(id);
+      return ResponseEntity.status(204).build();
+   }
+
+
+
 }

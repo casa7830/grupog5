@@ -19,17 +19,17 @@ public class ApiClient {
         return service.getClients();
     }
 
-    /*@GetMapping ( "/{id}")
+    @GetMapping ( "/{id}")
     public Client getClient(@PathVariable long id){
         return service.getClient(id);
     }
-    */
+
     @PostMapping("/save")
     public ResponseEntity saveClient(@RequestBody Client client) {
         service.saveClient(client);
         return ResponseEntity.status(201).build();
     }
-    /*
+
     @PutMapping("/update")
     public ResponseEntity updateClient(@RequestBody Client client){
     service.updateClient(client);
@@ -43,5 +43,4 @@ public class ApiClient {
         return ResponseEntity.status(204).build();
    }
 
-     */
 }

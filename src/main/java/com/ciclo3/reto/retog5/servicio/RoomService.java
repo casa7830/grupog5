@@ -16,21 +16,30 @@ public class RoomService {
     public List<Room> getRooms(){
        return repository.findAll();
     }
-    //POST
+
+    /**POST
+     *
+     */
    public Room saveRoom(Room room) {
         return repository.save(room);
    }
 
-   /*
+
    public Room getRoom(long id){
         return repository.findById(id).orElse( null);
    }
 
-   public Room updtateRoom(Room roomUpd){
+    public void deleteRoom (long idRoom){
+        repository.deleteById(idRoom);
+    }
+
+   public Room updateRoom(Room roomUpd){
      Room roomOld = getRoom(roomUpd.getId());
      roomOld.setName(roomUpd.getName());
+     roomOld.setStars(roomUpd.getStars());
+     roomOld.setDescription(roomUpd.getDescription());
      roomOld.setHotel(roomUpd.getHotel());
      return repository.save(roomOld);
    }
-   */
+
 }

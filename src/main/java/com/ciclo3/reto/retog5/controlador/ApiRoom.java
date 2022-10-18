@@ -21,15 +21,20 @@ public class ApiRoom {
     @GetMapping("/all")
     public List<Room> findAllRooms(){
         return service.getRooms();
-
     }
+
+    @GetMapping ("/{id}")
+    public Room getRoom(@PathVariable long id){
+        return service.getRoom(id);
+    }
+
     @PostMapping("/save")
     public ResponseEntity saveRoom(@RequestBody Room room){
         service.saveRoom(room);
         return ResponseEntity.status(201).build();
 
     }
-  /*
+
     @PutMapping("/update")
     public ResponseEntity updateRoom(@RequestBody Room room) {
         service.updateRoom(room);
@@ -41,5 +46,5 @@ public class ApiRoom {
         service.deleteRoom(id);
         return ResponseEntity.status(204).build();
     }
-  */
+
 }

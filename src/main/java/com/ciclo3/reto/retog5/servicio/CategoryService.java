@@ -26,9 +26,16 @@ public class CategoryService {
     public Category saveCategory(Category category) {
         return repository.save(category);
     }
+
     public Category getCategory(long id){
         return repository.findById(id).orElse(null);
     }
+
+    public void deleteCategory (Long idCategory){
+        repository.deleteById (idCategory);
+    }
+
+
     public Category updateCategory(Category categoryUpd) {
         Category categoryOld = getCategory(categoryUpd.getId());
         categoryOld.setName(categoryUpd.getName());
